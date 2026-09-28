@@ -42,9 +42,6 @@ h2,
 h3 {
     font-family: "Merriweather", serif;
 }
-body {
-    font-family: "Roboto", sans-serif;
-}
 
 /* ------------------------------- 2. Typography ----------------------------------- */
 
@@ -57,7 +54,322 @@ body {
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 40px;
+}
+
+.navigation-list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.navigation-list a {
+    color: var(--black);
+    text-decoration: none;
+}
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 140px;
+}
+.introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.introduction h2,
+.introduction p {
+    max-width: 700px;
+}
+.page-header {
+    background: linear-gradient(135deg, var(--purple), var(--blue));
+    color: white;
+}
+
+.navigation-list a {
+    color: white;
+}
+
+.header-content h1 {
+    max-width: 800px;
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.header-content p {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.header-button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 22px;
+    border-radius: 30px;
+    background-color: var(--pink);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 5px 12px rgba(12, 12, 12, 0.2);
+}
+.page-header {
+    position: relative;
+    /* Laat je bestaande gradient en clip-path hier staan */
+}
+
+.header-icon {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    filter: brightness(0) invert(1);
+    z-index: 1;
+}
+
+.page-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    height: 38px;
+    background-color: white;
+}
+
+
+
 
 /* --------------- 4.2 Introduction ------------------- */
+.introduction {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px 90px;
+    overflow: hidden;
+}
+.introduction::before {
+    content: "hello";
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
 
-/* ------------------------------- 5. Media Queries -------------------------------- */
+    font-size: 250px;
+    font-weight: 700;
+    color: var(--light-purple);
+
+    z-index: -1;
+}
+
+.introduction h2 {
+    max-width: 700px;
+    margin: 0 auto 65px;
+
+    color: var(--purple);
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+.introduction p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: var(--black);
+}
+.contact-text a {
+    color: var(--purple);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+/* ------------------------------- 5. Projects -------------------------------- */
+.projects {
+    background-color: var(--light-grey);
+    padding: 100px 40px;
+}
+.project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+
+    max-width: 1200px;
+    margin: 0 auto 100px;
+}
+.image-wrapper {
+    flex-basis: 800px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.image-wrapper img {
+    width: 100%;
+    display: block;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+.project-content {
+    flex-basis: 350px;
+    flex-shrink: 0;
+}
+.project:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.project-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-content .squiggle {
+    color: var(--purple);
+    margin-bottom: 35px;
+}
+
+.project-content p {
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.project-content a {
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+/* ------------------------------- Services -------------------------------- */
+
+.services {
+    position: relative;
+    padding: 120px 40px;
+}
+
+.services-background-title {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 140px;
+    color: var(--light-purple);
+    font-weight: 700;
+
+    z-index: 0;
+}
+
+.services-wrapper {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.service-card {
+    flex-basis: 300px;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    padding: 30px;
+
+    background-color: white;
+    border: 1px solid var(--purple);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: var(--purple);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--grey);
+    font-size: 14px;
+    line-height: 1.5;
+}
+/* ------------------------------- 5. Forms ---------------------------------------- */
+/* ------------------------------- 4.5 Contact -------------------------------- */
+
+.contact {
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    color: white;
+    padding: 100px 20px 50px;
+}
+
+.contact-content {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.contact-content h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-content > p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    margin-bottom: 25px;
+    font-family: inherit;
+    font-size: 14px;
+}
+.contact-form textarea {
+    min-height: 170px;
+    resize: vertical;
+}
+.contact-form button {
+    align-self: center;
+    background-color: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 16px 60px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+footer {
+    background-color: var(--black);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+}
